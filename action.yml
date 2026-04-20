@@ -52,5 +52,7 @@ runs:
       shell: bash
 
     - name: Push to GitLab
-      run: git push -f gitlab ${{ inputs.branch }}
+      run: |
+      git checkout -B ${{ inputs.branch }}
+      git push -f gitlab ${{ inputs.branch }}
       shell: bash
